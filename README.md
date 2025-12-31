@@ -9,6 +9,71 @@
 
 Certain ZMK features (e.g. combos) require knowing the exact key positions in the matrix. They can be found in both image and text format [here](assets/key-positions.md)
 
+## Keymap
+
+The keymap is configured in `config/adv360.keymap`. This configuration uses advanced ZMK behaviors inspired by [urob's ZMK config](https://github.com/urob/zmk-config).
+
+### Layers
+
+- **Base**: QWERTY with timeless home row mods (GASC layout)
+- **Ext**: Navigation, media controls, editing shortcuts (Cmd+Z/X/C/V)
+- **Sym**: Programming symbols with combos for common operators
+- **Mod**: Bluetooth profiles, RGB controls, and system functions
+
+![Adv360 Keymap](adv360_keymap.svg)
+
+### Thumb Cluster
+
+| Position | Key |
+|----------|-----|
+| Left inner (2u) | EXT layer |
+| Left middle (2u) | Magic Shift |
+| Left outer (1u) | Backspace |
+| Right inner (2u) | SYM layer |
+| Right middle (2u) | Space |
+| Right outer (1u) | Enter |
+
+### Advanced Features
+
+#### Timeless Home Row Mods
+Virtually misfire-free home row mods using urob's approach:
+- **Long tapping-term** (280ms) makes behavior timing-insensitive
+- **Positional hold-tap**: Mods only trigger when opposite hand is used
+- **Balanced flavor**: Activates on nested keypresses
+
+**Layout**: GASC (GUI, Alt, Shift, Ctrl)
+- Left hand: `A`=GUI, `S`=Alt, `D`=Shift, `F`=Ctrl
+- Right hand: `J`=Ctrl, `K`=Shift, `L`=Alt, `;`=GUI
+
+#### Magic Shift (Left Thumb)
+Context-aware shift key:
+- **Tap after letter** - Key repeat (e.g., "l" -> "ll")
+- **Tap after other key** - Sticky shift (capitalize next letter)
+- **Hold** - Regular shift
+
+#### Programming Combos (SYM Layer)
+- `=>` (arrow)
+- `<=` (less than or equal)
+- `>=` (greater than or equal)
+- `!=` (not equal)
+
+### Generate Keymap Visualization
+
+You can regenerate the keymap visualization using:
+
+```bash
+./draw.sh
+```
+
+This requires Python 3.12+ and will automatically install [keymap-drawer](https://github.com/caksoylar/keymap-drawer) via uv.
+
+Generated files:
+- `adv360_keymap.svg` - All layers combined
+- `adv360_keymap_base.svg` - Base layer only
+- `adv360_keymap_ext.svg` - Ext layer only
+- `adv360_keymap_sym.svg` - Sym layer only
+- `adv360_keymap_mod.svg` - Mod/settings layer only
+
 ## Building the Firmware with GitHub Actions
 
 ### Setup

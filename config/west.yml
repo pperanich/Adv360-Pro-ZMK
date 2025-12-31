@@ -4,10 +4,22 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: refil
       url-base: https://github.com/refil
+    # urob's zmk modules for advanced behaviors
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: refil
       revision: adv360-z3.5-2
       import: app/west.yml
+    # urob's ZMK modules for magic shift and other features
+    - name: zmk-helpers
+      remote: urob
+      revision: v0.3
+      path: modules/zmk/helpers
+    - name: zmk-adaptive-key
+      remote: urob
+      revision: v0.3
+      path: modules/zmk/adaptive-key
   self:
     path: config

@@ -1,0 +1,17 @@
+[project]
+name = "adv360-pro-zmk"
+version = "0.1.0"
+description = "ZMK firmware configuration for Kinesis Advantage 360 Pro"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "keymap-drawer>=0.22.1",
+  # Build dependencies for local firmware builds
+  "cmake>=4.1.0",
+  "ninja>=1.13.0",
+  "west>=1.4.0",
+  "pyelftools>=0.32",
+  "pyyaml>=6.0.2",
+  "packaging>=25.0",
+  "intelhex>=2.3.0",
+]
