@@ -1,0 +1,46 @@
+# Automated keymap visualization using keymap-drawer
+name: Draw ZMK Keymaps
+on:
+  workflow_dispatch:  # Manual trigger
+  push:               # Auto-trigger on keymap changes
+    paths:
+      - "config/*.keymap"
+      - "config/*.dtsi"
+      - "keymap_drawer.config.yaml"
+      - ".github/workflows/draw-keymaps.yml"
+  pull_request:       # Trigger on PRs affecting keymaps
+    paths:
+      - "config/*.keymap"
+      - "config/*.dtsi"
+      - "keymap_drawer.config.yaml"
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python and uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          version: "latest"
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Generate keymap visualization
+        run: ./draw.sh
+
+      - name: Commit and push changes
+        if: github.event_name == 'push'
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add adv360_keymap.svg
+          if git diff --staged --quiet; then
+            echo "No changes to keymap visualization"
+          else
+            git commit -m "Update keymap visualization"
+            git push
+          fi

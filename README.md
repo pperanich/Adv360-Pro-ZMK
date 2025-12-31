@@ -9,6 +9,36 @@
 
 Certain ZMK features (e.g. combos) require knowing the exact key positions in the matrix. They can be found in both image and text format [here](assets/key-positions.md)
 
+## Keymap
+
+The keymap is configured in `config/adv360.keymap`. This configuration includes:
+
+### Layers
+
+- **Base**: QWERTY layout with home row mods
+- **Kp (Keypad)**: Numpad on the right side
+- **Fn**: Function keys F1-F12
+- **Mod**: Bluetooth profiles, RGB controls, and system functions
+
+![Adv360 Keymap](adv360_keymap.svg)
+
+### Generate Keymap Visualization
+
+You can regenerate the keymap visualization using:
+
+```bash
+./draw.sh
+```
+
+This requires Python 3.12+ and will automatically install [keymap-drawer](https://github.com/caksoylar/keymap-drawer) via uv.
+
+Generated files:
+- `adv360_keymap.svg` - All layers combined
+- `adv360_keymap_base.svg` - Base layer only
+- `adv360_keymap_keypad.svg` - Keypad layer only
+- `adv360_keymap_fn.svg` - Function layer only
+- `adv360_keymap_mod.svg` - Mod/settings layer only
+
 ## Building the Firmware with GitHub Actions
 
 ### Setup

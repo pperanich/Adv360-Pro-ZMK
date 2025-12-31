@@ -1,0 +1,205 @@
+draw_config:
+  # Layout and sizing
+  key_w: 60.0
+  key_h: 56.0
+  key_rx: 6.0
+  key_ry: 6.0
+
+  # Spacing
+  inner_pad_w: 2.0
+  inner_pad_h: 2.0
+  outer_pad_w: 30.0
+  outer_pad_h: 56.0
+  split_gap: 30.0
+
+  # Colors and styling
+  dark_mode: "auto"
+
+  # Text styling
+  line_spacing: 1.2
+  legend_rel_x: 0.0
+  legend_rel_y: 0.0
+
+  # Glyph settings
+  glyph_tap_size: 14
+  glyph_hold_size: 12
+  glyph_shifted_size: 10
+
+parse_config:
+  # ZMK-specific parsing settings
+  raw_binding_map:
+    # System controls
+    "&bootloader": "$$mdi:cog$$"
+    "&sys_reset": "$$mdi:restart$$"
+    "&bt BT_CLR": "$$mdi:bluetooth-off$$"
+    "&studio_unlock": "$$mdi:lock-open$$"
+
+    # Adv360 custom macros - auto-pair
+    "&macro_quotes": "'_'"
+    "&macro_dquotes": '"_"'
+    "&macro_braces": "{_}"
+    "&macro_parens": "(_)"
+    "&macro_brackets": "[_]"
+    "&macro_kinesis": "Kinesis"
+
+    # Windows shortcuts
+    "&Win_Cut": "$$mdi:content-cut$$"
+    "&Win_Copy": "$$mdi:content-copy$$"
+    "&Win_Paste": "$$mdi:content-paste$$"
+    "&Win_Undo": "$$mdi:undo$$"
+    "&Win_Select_All": "Sel All"
+    "&Win_Desktop": "$$mdi:desktop-mac$$"
+    "&Win_File_Explorer": "$$mdi:folder$$"
+    "&Win_Snip_Tool": "$$mdi:scissors-cutting$$"
+    "&Win_Show_All_Windows": "$$mdi:view-grid$$"
+    "&Win_Close_Program": "$$mdi:close$$"
+    "&Win_Settings_Menu": "$$mdi:cog$$"
+    "&Win_Lock_PC": "$$mdi:lock$$"
+    "&Win_Tile_Left": "$$mdi:dock-left$$"
+    "&Win_Tile_Right": "$$mdi:dock-right$$"
+    "&Win_Tile_Up": "$$mdi:dock-top$$"
+    "&Win_Tile_Down": "$$mdi:dock-bottom$$"
+
+    # Mac shortcuts
+    "&Mac_Cut": "$$mdi:content-cut$$"
+    "&Mac_Copy": "$$mdi:content-copy$$"
+    "&Mac_Paste": "$$mdi:content-paste$$"
+    "&Mac_Undo": "$$mdi:undo$$"
+    "&Mac_Select_All": "Sel All"
+    "&Mac_Mission_Control": "$$mdi:view-grid$$"
+    "&Mac_Snip_Tool": "$$mdi:scissors-cutting$$"
+    "&Mac_Close_Program": "$$mdi:close$$"
+    "&Mac_Spotlight_Search": "$$mdi:magnify$$"
+    "&Mac_Strike_Through_Text": "$$mdi:format-strikethrough$$"
+
+    # Mouse
+    "&Double_Click": "$$mdi:cursor-default-click$$"
+
+    # Status/battery
+    "&stp STP_BAT": "$$mdi:battery$$"
+
+    # Bluetooth profiles
+    "&bt BT_SEL 0": "BT 1"
+    "&bt BT_SEL 1": "BT 2"
+    "&bt BT_SEL 2": "BT 3"
+    "&bt BT_SEL 3": "BT 4"
+    "&bt BT_SEL 4": "BT 5"
+
+    # Backlight/RGB
+    "&bl BL_TOG": "$$mdi:lightbulb$$"
+    "&bl BL_INC": "$$mdi:brightness-7$$"
+    "&bl BL_DEC": "$$mdi:brightness-5$$"
+    "&rgb_ug RGB_TOG": "$$mdi:led-on$$"
+
+  zmk_keycode_map:
+    # Media controls
+    "C_VOL_UP": "$$mdi:volume-high$$"
+    "C_VOL_DN": "$$mdi:volume-low$$"
+    "C_MUTE": "$$mdi:volume-off$$"
+    "C_PLAY_PAUSE": "$$mdi:play-pause$$"
+    "C_NEXT": "$$mdi:skip-forward$$"
+    "C_PREV": "$$mdi:skip-backward$$"
+
+    # Navigation
+    "UP": "$$mdi:arrow-up$$"
+    "DOWN": "$$mdi:arrow-down$$"
+    "LEFT": "$$mdi:arrow-left$$"
+    "RIGHT": "$$mdi:arrow-right$$"
+    "HOME": "$$mdi:page-first$$"
+    "END": "$$mdi:page-last$$"
+    "PG_UP": "PgUp"
+    "PG_DN": "PgDn"
+
+    # Common symbols
+    "BSLH": "\\"
+    "PIPE": "|"
+    "UNDER": "_"
+    "AMPS": "&"
+    "PRCNT": "%"
+    "PLUS": "+"
+    "MINUS": "-"
+    "EQUAL": "="
+    "STAR": "*"
+    "SLASH": "/"
+    "FSLH": "/"
+    "LT": "<"
+    "GT": ">"
+    "COLON": ":"
+    "SEMI": ";"
+    "LBRC": "{"
+    "RBRC": "}"
+    "LPAR": "("
+    "RPAR": ")"
+    "LBKT": "["
+    "RBKT": "]"
+    "DLLR": "$"
+    "AT": "@"
+    "HASH": "#"
+    "CARET": "^"
+    "TILDE": "~"
+    "EXCL": "!"
+    "QMARK": "?"
+    "COMMA": ","
+    "DOT": "."
+    "SQT": "'"
+    "DQT": '"'
+    "GRAVE": "`"
+
+    # Special keys
+    "ESC": "Esc"
+    "TAB": "Tab"
+    "ENTER": "$$mdi:keyboard-return$$"
+    "BSPC": "$$mdi:backspace$$"
+    "DEL": "Del"
+    "SPACE": "Space"
+    "CAPS": "Caps"
+
+    # Modifiers
+    "LGUI": "$$mdi:apple-keyboard-command$$"
+    "LALT": "$$mdi:apple-keyboard-option$$"
+    "LCTRL": "Ctrl"
+    "LSHFT": "$$mdi:apple-keyboard-shift$$"
+    "RGUI": "$$mdi:apple-keyboard-command$$"
+    "RALT": "$$mdi:apple-keyboard-option$$"
+    "RCTRL": "Ctrl"
+    "RSHFT": "$$mdi:apple-keyboard-shift$$"
+
+    # Function keys
+    "F1": "F1"
+    "F2": "F2"
+    "F3": "F3"
+    "F4": "F4"
+    "F5": "F5"
+    "F6": "F6"
+    "F7": "F7"
+    "F8": "F8"
+    "F9": "F9"
+    "F10": "F10"
+    "F11": "F11"
+    "F12": "F12"
+
+    # Keypad
+    "KP_NUM": "NumLk"
+    "KP_EQUAL": "="
+    "KP_DIVIDE": "/"
+    "KP_MULTIPLY": "*"
+    "KP_MINUS": "-"
+    "KP_PLUS": "+"
+    "KP_ENTER": "$$mdi:keyboard-return$$"
+    "KP_DOT": "."
+    "KP_N0": "0"
+    "KP_N1": "1"
+    "KP_N2": "2"
+    "KP_N3": "3"
+    "KP_N4": "4"
+    "KP_N5": "5"
+    "KP_N6": "6"
+    "KP_N7": "7"
+    "KP_N8": "8"
+    "KP_N9": "9"
+
+    # Screenshot
+    "PSCRN": "$$mdi:camera$$"
+
+  # Combos configuration
+  zmk_combos: {}
