@@ -10,3 +10,11 @@ uv.lock
 # Keep adv360_keymap.svg for README, but ignore per-layer SVGs and parsed yaml
 adv360_keymap_*.svg
 adv360_keymap.yaml
+
+# Local build artifacts (build with ./build.sh)
+/build/
+/.west/
+/zephyr/
+/zmk/
+/modules/
+/zephyr-sdk-*/

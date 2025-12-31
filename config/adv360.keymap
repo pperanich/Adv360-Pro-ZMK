@@ -45,9 +45,6 @@
 
 / {
   behaviors {
-    #include "macros.dtsi"
-    #include "version.dtsi"
-
     /* Timeless home row mods - GASC layout (GUI, Alt, Shift, Ctrl)
      * Based on urob's timeless HRM approach:
      * - Long tapping-term (280ms) makes timing insensitive
@@ -102,7 +99,11 @@
       #binding-cells = <0>;
       bindings = <&sk LSHFT>;
       repeat {
-        usage-pages = <0x07>;
+        trigger-keys = <
+          14 15 16 17 18 19 20  21 22 23 24 25 26 27   // QWERTY row
+          29 30 31 32 33 34     38 39 40 41 42 43      // Home row (letters only)
+          47 48 49 50 51        54 55 56 57 58         // Bottom row (letters only)
+        >;
         bindings = <&key_repeat>;
         max-prior-idle-ms = <1200>;
         strict-modifiers;
@@ -124,22 +125,22 @@
     combo_lte {
       timeout-ms = <50>;
       key-positions = <31 32>; // D + F position on SYM layer -> <=
-      bindings = <&lte>;
-      layers = <SYM>;
+        bindings = <&lte>;
+        layers = <SYM>;
     };
 
     combo_gte {
       timeout-ms = <50>;
       key-positions = <41 42>; // J + K position on SYM layer -> >=
-      bindings = <&gte>;
-      layers = <SYM>;
+        bindings = <&gte>;
+        layers = <SYM>;
     };
 
     combo_neq {
       timeout-ms = <50>;
       key-positions = <30 31>; // S + D position on SYM layer -> !=
-      bindings = <&neq>;
-      layers = <SYM>;
+        bindings = <&neq>;
+        layers = <SYM>;
     };
   };
 
