@@ -29,10 +29,27 @@ parse_config:
   # ZMK-specific parsing settings
   raw_binding_map:
     # System controls
-    "&bootloader": "$$mdi:cog$$"
-    "&sys_reset": "$$mdi:restart$$"
-    "&bt BT_CLR": "$$mdi:bluetooth-off$$"
-    "&studio_unlock": "$$mdi:lock-open$$"
+    "&bootloader": "$$phosphor:regular/gear$$"
+    "&sys_reset": "$$phosphor:regular/arrow-clockwise$$"
+    "&bt BT_CLR": "$$phosphor:regular/trash$$"
+    "&studio_unlock": "$$phosphor:regular/lock-open$$"
+
+    # Custom behaviors
+    "&magic_shift LSHFT 0": "$$phosphor:regular/arrow-fat-up$$"
+    "&shift_repeat": "$$phosphor:regular/repeat$$"
+
+    # Programming macros
+    "&arrow": "=>"
+    "&lte": "$$phosphor:regular/less-than-or-equal$$"
+    "&gte": "$$phosphor:regular/greater-than-or-equal$$"
+    "&neq": "$$phosphor:regular/not-equals$$"
+
+    # Layer names
+    "SYM": "SYM"
+    "EXT": "EXT"
+    "MOD": "MOD"
+    "GAME": "$$phosphor:regular/game-controller$$"
+    "&tog GAME": {t: "$$phosphor:regular/game-controller$$", h: "toggle"}
 
     # Adv360 custom macros - auto-pair
     "&macro_quotes": "'_'"
@@ -43,72 +60,72 @@ parse_config:
     "&macro_kinesis": "Kinesis"
 
     # Windows shortcuts
-    "&Win_Cut": "$$mdi:content-cut$$"
-    "&Win_Copy": "$$mdi:content-copy$$"
-    "&Win_Paste": "$$mdi:content-paste$$"
-    "&Win_Undo": "$$mdi:undo$$"
+    "&Win_Cut": "$$phosphor:regular/scissors$$"
+    "&Win_Copy": "$$phosphor:regular/copy$$"
+    "&Win_Paste": "$$phosphor:regular/clipboard$$"
+    "&Win_Undo": "$$phosphor:regular/arrow-counter-clockwise$$"
     "&Win_Select_All": "Sel All"
-    "&Win_Desktop": "$$mdi:desktop-mac$$"
-    "&Win_File_Explorer": "$$mdi:folder$$"
-    "&Win_Snip_Tool": "$$mdi:scissors-cutting$$"
-    "&Win_Show_All_Windows": "$$mdi:view-grid$$"
-    "&Win_Close_Program": "$$mdi:close$$"
-    "&Win_Settings_Menu": "$$mdi:cog$$"
-    "&Win_Lock_PC": "$$mdi:lock$$"
-    "&Win_Tile_Left": "$$mdi:dock-left$$"
-    "&Win_Tile_Right": "$$mdi:dock-right$$"
-    "&Win_Tile_Up": "$$mdi:dock-top$$"
-    "&Win_Tile_Down": "$$mdi:dock-bottom$$"
+    "&Win_Desktop": "$$phosphor:regular/desktop$$"
+    "&Win_File_Explorer": "$$phosphor:regular/folder$$"
+    "&Win_Snip_Tool": "$$phosphor:regular/scissors$$"
+    "&Win_Show_All_Windows": "$$phosphor:regular/squares-four$$"
+    "&Win_Close_Program": "$$phosphor:regular/x$$"
+    "&Win_Settings_Menu": "$$phosphor:regular/gear$$"
+    "&Win_Lock_PC": "$$phosphor:regular/lock$$"
+    "&Win_Tile_Left": "$$phosphor:regular/arrow-line-left$$"
+    "&Win_Tile_Right": "$$phosphor:regular/arrow-line-right$$"
+    "&Win_Tile_Up": "$$phosphor:regular/arrow-line-up$$"
+    "&Win_Tile_Down": "$$phosphor:regular/arrow-line-down$$"
 
     # Mac shortcuts
-    "&Mac_Cut": "$$mdi:content-cut$$"
-    "&Mac_Copy": "$$mdi:content-copy$$"
-    "&Mac_Paste": "$$mdi:content-paste$$"
-    "&Mac_Undo": "$$mdi:undo$$"
+    "&Mac_Cut": "$$phosphor:regular/scissors$$"
+    "&Mac_Copy": "$$phosphor:regular/copy$$"
+    "&Mac_Paste": "$$phosphor:regular/clipboard$$"
+    "&Mac_Undo": "$$phosphor:regular/arrow-counter-clockwise$$"
     "&Mac_Select_All": "Sel All"
-    "&Mac_Mission_Control": "$$mdi:view-grid$$"
-    "&Mac_Snip_Tool": "$$mdi:scissors-cutting$$"
-    "&Mac_Close_Program": "$$mdi:close$$"
-    "&Mac_Spotlight_Search": "$$mdi:magnify$$"
-    "&Mac_Strike_Through_Text": "$$mdi:format-strikethrough$$"
+    "&Mac_Mission_Control": "$$phosphor:regular/squares-four$$"
+    "&Mac_Snip_Tool": "$$phosphor:regular/scissors$$"
+    "&Mac_Close_Program": "$$phosphor:regular/x$$"
+    "&Mac_Spotlight_Search": "$$phosphor:regular/magnifying-glass$$"
+    "&Mac_Strike_Through_Text": "$$phosphor:regular/text-strikethrough$$"
 
     # Mouse
-    "&Double_Click": "$$mdi:cursor-default-click$$"
+    "&Double_Click": "$$phosphor:regular/cursor-click$$"
 
     # Status/battery
-    "&stp STP_BAT": "$$mdi:battery$$"
+    "&stp STP_BAT": "$$phosphor:regular/battery-full$$"
 
     # Bluetooth profiles
-    "&bt BT_SEL 0": "BT 1"
-    "&bt BT_SEL 1": "BT 2"
-    "&bt BT_SEL 2": "BT 3"
-    "&bt BT_SEL 3": "BT 4"
-    "&bt BT_SEL 4": "BT 5"
+    "&bt BT_SEL 0": "$$phosphor:regular/number-circle-one$$"
+    "&bt BT_SEL 1": "$$phosphor:regular/number-circle-two$$"
+    "&bt BT_SEL 2": "$$phosphor:regular/number-circle-three$$"
+    "&bt BT_SEL 3": "$$phosphor:regular/number-circle-four$$"
+    "&bt BT_SEL 4": "$$phosphor:regular/number-circle-five$$"
 
     # Backlight/RGB
-    "&bl BL_TOG": "$$mdi:lightbulb$$"
-    "&bl BL_INC": "$$mdi:brightness-7$$"
-    "&bl BL_DEC": "$$mdi:brightness-5$$"
-    "&rgb_ug RGB_TOG": "$$mdi:led-on$$"
+    "&bl BL_TOG": "$$phosphor:regular/lightbulb$$"
+    "&bl BL_INC": "$$phosphor:regular/sun$$"
+    "&bl BL_DEC": "$$phosphor:regular/moon$$"
+    "&rgb_ug RGB_TOG": "$$phosphor:regular/rainbow$$"
 
   zmk_keycode_map:
     # Media controls
-    "C_VOL_UP": "$$mdi:volume-high$$"
-    "C_VOL_DN": "$$mdi:volume-low$$"
-    "C_MUTE": "$$mdi:volume-off$$"
-    "C_PLAY_PAUSE": "$$mdi:play-pause$$"
-    "C_NEXT": "$$mdi:skip-forward$$"
-    "C_PREV": "$$mdi:skip-backward$$"
+    "C_VOL_UP": "$$phosphor:regular/speaker-high$$"
+    "C_VOL_DN": "$$phosphor:regular/speaker-low$$"
+    "C_MUTE": "$$phosphor:regular/speaker-x$$"
+    "C_PLAY_PAUSE": "$$phosphor:regular/play-pause$$"
+    "C_NEXT": "$$phosphor:regular/skip-forward$$"
+    "C_PREV": "$$phosphor:regular/skip-back$$"
 
     # Navigation
-    "UP": "$$mdi:arrow-up$$"
-    "DOWN": "$$mdi:arrow-down$$"
-    "LEFT": "$$mdi:arrow-left$$"
-    "RIGHT": "$$mdi:arrow-right$$"
-    "HOME": "$$mdi:page-first$$"
-    "END": "$$mdi:page-last$$"
-    "PG_UP": "PgUp"
-    "PG_DN": "PgDn"
+    "UP": "$$phosphor:regular/arrow-up$$"
+    "DOWN": "$$phosphor:regular/arrow-down$$"
+    "LEFT": "$$phosphor:regular/arrow-left$$"
+    "RIGHT": "$$phosphor:regular/arrow-right$$"
+    "HOME": "$$phosphor:regular/house$$"
+    "END": "$$phosphor:regular/arrow-line-right$$"
+    "PG_UP": "$$phosphor:regular/arrow-square-up$$"
+    "PG_DN": "$$phosphor:regular/arrow-square-down$$"
 
     # Common symbols
     "BSLH": "\\"
@@ -146,23 +163,23 @@ parse_config:
     "GRAVE": "`"
 
     # Special keys
-    "ESC": "Esc"
-    "TAB": "Tab"
-    "ENTER": "$$mdi:keyboard-return$$"
-    "BSPC": "$$mdi:backspace$$"
-    "DEL": "Del"
-    "SPACE": "Space"
-    "CAPS": "Caps"
+    "ESC": "ESC"
+    "TAB": "TAB"
+    "ENTER": "$$phosphor:regular/key-return$$"
+    "BSPC": "$$phosphor:regular/backspace$$"
+    "DEL": "$$phosphor:regular/x$$"
+    "SPACE": "␣"
+    "CAPS": "$$phosphor:regular/arrow-fat-line-up$$"
 
     # Modifiers
-    "LGUI": "$$mdi:apple-keyboard-command$$"
-    "LALT": "$$mdi:apple-keyboard-option$$"
-    "LCTRL": "Ctrl"
-    "LSHFT": "$$mdi:apple-keyboard-shift$$"
-    "RGUI": "$$mdi:apple-keyboard-command$$"
-    "RALT": "$$mdi:apple-keyboard-option$$"
-    "RCTRL": "Ctrl"
-    "RSHFT": "$$mdi:apple-keyboard-shift$$"
+    "LGUI": "$$phosphor:regular/command$$"
+    "LALT": "$$phosphor:regular/option$$"
+    "LCTRL": "$$phosphor:regular/control$$"
+    "LSHFT": "$$phosphor:regular/arrow-fat-up$$"
+    "RGUI": "$$phosphor:regular/command$$"
+    "RALT": "$$phosphor:regular/option$$"
+    "RCTRL": "$$phosphor:regular/control$$"
+    "RSHFT": "$$phosphor:regular/arrow-fat-up$$"
 
     # Function keys
     "F1": "F1"
@@ -185,7 +202,7 @@ parse_config:
     "KP_MULTIPLY": "*"
     "KP_MINUS": "-"
     "KP_PLUS": "+"
-    "KP_ENTER": "$$mdi:keyboard-return$$"
+    "KP_ENTER": "$$phosphor:regular/key-return$$"
     "KP_DOT": "."
     "KP_N0": "0"
     "KP_N1": "1"
@@ -199,7 +216,23 @@ parse_config:
     "KP_N9": "9"
 
     # Screenshot
-    "PSCRN": "$$mdi:camera$$"
+    "PSCRN": "$$phosphor:regular/camera$$"
+
+    # Application key
+    "K_APP": "$$phosphor:regular/list-dashes$$"
+
+    # Copy/paste shortcuts
+    "LC(Z)": "$$phosphor:regular/arrow-counter-clockwise$$"
+    "LC(X)": "$$phosphor:regular/scissors$$"
+    "LC(C)": "$$phosphor:regular/copy$$"
+    "LC(V)": "$$phosphor:regular/clipboard$$"
+    "LC(Y)": "$$phosphor:regular/arrow-clockwise$$"
+    "LG(Z)": "$$phosphor:regular/arrow-counter-clockwise$$"
+    "LG(X)": "$$phosphor:regular/scissors$$"
+    "LG(C)": "$$phosphor:regular/copy$$"
+    "LG(V)": "$$phosphor:regular/clipboard$$"
+    "LG(Y)": "$$phosphor:regular/arrow-clockwise$$"
+    "LG(BSPC)": "$$phosphor:regular/backspace$$"
 
   # Combos configuration
   zmk_combos: {}

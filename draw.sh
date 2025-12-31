@@ -32,17 +32,19 @@ $KEYMAP_CMD -c keymap_drawer.config.yaml draw adv360_keymap.yaml -j config/info.
 
 # Draw individual layers for reference
 echo "Drawing individual layers..."
-$KEYMAP_CMD -c keymap_drawer.config.yaml draw adv360_keymap.yaml -j config/info.json --select-layers Base >adv360_keymap_base.svg
-$KEYMAP_CMD -c keymap_drawer.config.yaml draw adv360_keymap.yaml -j config/info.json --select-layers Kp >adv360_keymap_keypad.svg
-$KEYMAP_CMD -c keymap_drawer.config.yaml draw adv360_keymap.yaml -j config/info.json --select-layers Fn >adv360_keymap_fn.svg
-$KEYMAP_CMD -c keymap_drawer.config.yaml draw adv360_keymap.yaml -j config/info.json --select-layers Mod >adv360_keymap_mod.svg
+$KEYMAP_CMD -c keymap_drawer.config.yaml draw adv360_keymap.yaml -j config/info.json --select-layers BASE >adv360_keymap_base.svg
+$KEYMAP_CMD -c keymap_drawer.config.yaml draw adv360_keymap.yaml -j config/info.json --select-layers EXT >adv360_keymap_ext.svg
+$KEYMAP_CMD -c keymap_drawer.config.yaml draw adv360_keymap.yaml -j config/info.json --select-layers SYM >adv360_keymap_sym.svg
+$KEYMAP_CMD -c keymap_drawer.config.yaml draw adv360_keymap.yaml -j config/info.json --select-layers MOD >adv360_keymap_mod.svg
+$KEYMAP_CMD -c keymap_drawer.config.yaml draw adv360_keymap.yaml -j config/info.json --select-layers GAME >adv360_keymap_game.svg
 
 echo "Keymap drawing complete!"
 echo ""
 echo "Generated files:"
 echo "   All layers:     adv360_keymap.svg"
 echo "   Base layer:     adv360_keymap_base.svg"
-echo "   Keypad layer:   adv360_keymap_keypad.svg"
-echo "   Fn layer:       adv360_keymap_fn.svg"
+echo "   Ext layer:      adv360_keymap_ext.svg"
+echo "   Sym layer:      adv360_keymap_sym.svg"
 echo "   Mod layer:      adv360_keymap_mod.svg"
+echo "   Game layer:     adv360_keymap_game.svg"
 echo "   Parsed config:  adv360_keymap.yaml"
