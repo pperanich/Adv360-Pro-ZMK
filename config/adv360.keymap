@@ -6,6 +6,7 @@
  * Features:
  * - Timeless home row mods (GASC layout) for virtually misfire-free HRMs
  * - Magic shift: tap after letter=repeat, after other=sticky-shift, hold=shift
+ * - Mod-morphs: comma->single-quote, period->double-quote when shifted
  * - EXT layer: Navigation, media, editing shortcuts (Cmd+Z/X/C/V)
  * - SYM layer: Programming symbols with combos for =>, <=, >=, !=
  *
@@ -109,6 +110,24 @@
         strict-modifiers;
       };
     };
+
+    /* Comma/Single-quote mod-morph: tap=comma, shift+tap=single-quote */
+    comma_morph: comma_morph {
+      compatible = "zmk,behavior-mod-morph";
+      label = "COMMA_MORPH";
+      #binding-cells = <0>;
+      bindings = <&kp COMMA>, <&kp SQT>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    /* Period/Double-quote mod-morph: tap=period, shift+tap=double-quote */
+    period_morph: period_morph {
+      compatible = "zmk,behavior-mod-morph";
+      label = "PERIOD_MORPH";
+      #binding-cells = <0>;
+      bindings = <&kp DOT>, <&kp DQT>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
   };
 
   /* Programming symbol combos */
@@ -183,7 +202,7 @@
         &kp EQUAL &kp N1         &kp N2        &kp N3         &kp N4         &kp N5 &tog GAME                                                                   &mo MOD &kp N6 &kp N7         &kp N8         &kp N9        &kp N0          &kp MINUS
         &kp TAB   &kp Q          &kp W         &kp E          &kp R          &kp T  &none                                                                       &none   &kp Y  &kp U          &kp I          &kp O         &kp P           &kp BSLH
         &kp ESC   &hml LGUI A    &hml LALT S   &hml LSHFT D   &hml LCTRL F   &kp G  &none           &kp LCTRL &kp LGUI &kp RGUI  &kp RCTRL                      &none   &kp H  &hmr RCTRL J   &hmr RSHFT K   &hmr RALT L   &hmr RGUI SEMI  &kp SQT
-        &kp LSHFT &kp Z          &kp X         &kp C          &kp V          &kp B                            &kp LALT &kp RALT                                         &kp N  &kp M          &kp COMMA      &kp DOT       &kp FSLH        &kp RSHFT
+        &kp LSHFT &kp Z          &kp X         &kp C          &kp V          &kp B                            &kp LALT &kp RALT                                         &kp N  &kp M          &comma_morph   &period_morph &kp FSLH        &kp RSHFT
         &none     &kp GRAVE      &kp CAPS      &kp LEFT       &kp RIGHT                   &mo EXT &magic_shift LSHFT 0 &kp BSPC &kp ENTER &kp SPACE &mo SYM                    &kp UP         &kp DOWN       &kp LBKT      &kp RBKT        &none
       >;
     };
