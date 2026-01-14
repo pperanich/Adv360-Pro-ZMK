@@ -18,3 +18,5 @@ adv360_keymap.yaml
 /zmk/
 /modules/
 /zephyr-sdk-*/
+
+.DS_Store
